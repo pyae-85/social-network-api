@@ -61,18 +61,25 @@ This project showcases REST API design, authentication, and database integration
 
 # Example Request
 
-POST /auth/register<br>
+POST /user/login<br>
 Content-Type: application/json<br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"username": "johndoe",<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"password": "mypassword123"<br>
 }
 
 Response:<br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"username": "johndoe",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"success": true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"token": "jwt.token.here",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"expiresAt": 1699999999999<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"success": false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"message": "Incorrect username or password"<br>
 }
 
 ## License
