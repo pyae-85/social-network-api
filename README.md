@@ -40,8 +40,9 @@ This project showcases REST API design, authentication, and database integration
 ## API Endpoints
 
 ### Auth
- * POST /auth/register → Register new user<br>
- * POST /auth/login → Login & get token
+ * POST /users/register → Register new user<br>
+ * POST /users/login → Login & get token<br>
+ * POST /users/verity → verify token
 
 ### Users
  * GET /users/:id → Get user profile<br>
@@ -49,19 +50,22 @@ This project showcases REST API design, authentication, and database integration
  * DELETE /users/:id → Delete profile (owner only)
 
 ### Posts
- * GET /posts → Get all posts<br>
- * GET /posts/:id → Get post by ID<br>
+ * GET /posts → List posts (paginated)<br>
+ * GET /posts/:id → Get post details<br>
  * POST /posts → Create post<br>
  * PUT /posts/:id → Update post (owner only)<br>
- * DELETE /posts/:id → Delete post (owner only)
+ * DELETE /posts/:id → Delete post (owner only)<br>
+ * POST /posts/:postId/like   → Like post<br>
+ * DELETE /posts/:postId/like   → Unlike post
 
 ### Comments
  * POST /posts/:id/comments → Add comment<br>
+ * PUT /posts/:postId/comments/:commentId → Update comment (ownership)
  * DELETE /posts/:id/comments/:commentId → Delete comment (owner only)
 
 # Example Request
 
-POST /user/login<br>
+POST /users/login<br>
 Content-Type: application/json<br>
 {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"username": "johndoe",<br>
