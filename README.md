@@ -5,12 +5,12 @@ This project showcases REST API design, authentication, and database integration
 
 ## Features
 
-🔐 Authentication & Authorization (JWT-based)
-👤 User Profiles (create, update, delete)
-📝 Posts (CRUD operations)
-💬 Comments (add, update, delete)
-👍 Likes / Unlikes
-🛡️ Ownership Middleware for secure actions
+🔐 Authentication & Authorization (JWT-based)<br>
+👤 User Profiles (create, update, delete)<br>
+📝 Posts (CRUD operations)<br>
+💬 Comments (add, update, delete)<br>
+👍 Likes / Unlikes<br>
+🛡️ Ownership Middleware for secure actions<br>
 
 ## Tech Stack
 
@@ -22,47 +22,47 @@ This project showcases REST API design, authentication, and database integration
 
 ## Getting Started
 
-1️⃣ Clone the repository
-git clone https://github.com/your-username/social-network-api.git
+1️⃣ Clone the repository<br>
+git clone https://github.com/your-username/social-network-api.git<br>
 cd social-network-api
 
-2️⃣ Install dependencies
+2️⃣ Install dependencies<br>
 npm install
 
-3️⃣ Set up environment variables
-Create a .env file in the root with:
-DATABASE_URL="your_database_url"
+3️⃣ Set up environment variables<br>
+Create a .env file in the root with:<br>
+DATABASE_URL="your_database_url"<br>
 JWT_SECRET="your_jwt_secret"
 
-4️⃣ Run the app
-npm run dev
+4️⃣ Run the app<br>
+npm run dev<br>
 
 ## API Endpoints
 
 ### Auth
- * POST /auth/register → Register new user
+ * POST /auth/register → Register new user<br>
  * POST /auth/login → Login & get token
 
 ### Users
- * GET /users/:id → Get user profile
- * PUT /users/:id → Update profile (owner only)
+ * GET /users/:id → Get user profile<br>
+ * PUT /users/:id → Update profile (owner only)<br>
  * DELETE /users/:id → Delete profile (owner only)
 
 ### Posts
- * GET /posts → Get all posts
- * GET /posts/:id → Get post by ID
- * POST /posts → Create post
- * PUT /posts/:id → Update post (owner only)
+ * GET /posts → Get all posts<br>
+ * GET /posts/:id → Get post by ID<br>
+ * POST /posts → Create post<br>
+ * PUT /posts/:id → Update post (owner only)<br>
  * DELETE /posts/:id → Delete post (owner only)
 
 ### Comments
- * POST /posts/:id/comments → Add comment
+ * POST /posts/:id/comments → Add comment<br>
  * DELETE /posts/:id/comments/:commentId → Delete comment (owner only)
 
 # Example Request
 
-POST /auth/register
-Content-Type: application/json
+POST /auth/register<br>
+Content-Type: application/json<br>
 {
   "name": "John Doe",
   "username": "johndoe",
