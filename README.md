@@ -1,6 +1,6 @@
 # Social Network API
 
-A Node.js + Express.js backend API for a social networking platform.
+A Node.js + Express.js backend API for a social networking platform.<br>
 This project showcases REST API design, authentication, and database integration.
 
 ## Features
