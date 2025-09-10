@@ -23,19 +23,19 @@ This project showcases REST API design, authentication, and database integration
 ## Getting Started
 
 1️⃣ Clone the repository<br>
-   git clone https://github.com/your-username/social-network-api.git<br>
-   cd social-network-api
+&nbsp;&nbsp;&nbsp;git clone https://github.com/your-username/social-network-api.git<br>
+&nbsp;&nbsp;&nbsp;cd social-network-api
 
 2️⃣ Install dependencies<br>
-   npm install
+&nbsp;&nbsp;&nbsp;npm install
 
 3️⃣ Set up environment variables<br>
-   Create a .env file in the root with:<br>
-     DATABASE_URL="your_database_url"<br>
-     JWT_SECRET="your_jwt_secret"
+&nbsp;&nbsp;&nbsp;Create a .env file in the root with:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATABASE_URL="your_database_url"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JWT_SECRET="your_jwt_secret"
 
 4️⃣ Run the app<br>
-npm run dev<br>
+&nbsp;&nbsp;&nbsp;npm run dev<br>
 
 ## API Endpoints
 
@@ -64,16 +64,16 @@ npm run dev<br>
 POST /auth/register<br>
 Content-Type: application/json<br>
 {<br>
-  "name": "John Doe",<br>
-  "username": "johndoe",<br>
-  "password": "mypassword123"
+&nbsp;&nbsp;&nbsp;"name": "John Doe",<br>
+&nbsp;&nbsp;&nbsp;"username": "johndoe",<br>
+&nbsp;&nbsp;&nbsp;"password": "mypassword123"
 }
 
 Response:<br>
 {<br>
-  "id": "user123",<br>
-  "username": "johndoe",<br>
-  "token": "jwt.token.here"<br>
+&nbsp;&nbsp;&nbsp;"id": "user123",<br>
+&nbsp;&nbsp;&nbsp;"username": "johndoe",<br>
+&nbsp;&nbsp;&nbsp;"token": "jwt.token.here"<br>
 }
 
 ## License
