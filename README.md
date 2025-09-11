@@ -16,7 +16,7 @@ This project showcases REST API design, authentication, and database integration
 
  * Node.js + Express.js
  * Prisma ORM
- * SQLite
+ * postgreSQL
  * JWT for authentication
  * bcrypt for password hashing
 
