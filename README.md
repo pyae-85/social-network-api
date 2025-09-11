@@ -27,7 +27,8 @@ This project showcases REST API design, authentication, and database integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd social-network-api
 
 2️⃣ Install dependencies<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npx prisma migrate dev --name init
 
 3️⃣ Set up environment variables<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a .env file in the root with:<br>
@@ -35,7 +36,7 @@ This project showcases REST API design, authentication, and database integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JWT_SECRET="your_jwt_secret"
 
 4️⃣ Run the app<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm run dev<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npx nodemon index.js<br>
 
 ## API Endpoints
 
