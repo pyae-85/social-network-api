@@ -43,11 +43,12 @@ This project showcases REST API design, authentication, and database integration
 ### Auth
  * POST /users/register → Register new user<br>
  * POST /users/login → Login & get token<br>
- * POST /users/verity → verify token
+ * POST /users/verity → Verify token
 
 ### Users
+ * GET /users → List users<br>
  * GET /users/:id → Get user profile<br>
- * PUT /users/:id → Update profile (owner only)<br>
+ * PUT /users/edit/:id → Update profile (owner only)<br>
  * DELETE /users/:id → Delete profile (owner only)
 
 ### Posts
@@ -61,7 +62,7 @@ This project showcases REST API design, authentication, and database integration
 
 ### Comments
  * POST /posts/:id/comments → Add comment<br>
- * PUT /posts/:postId/comments/:commentId → Update comment (ownership)
+ * PUT /posts/:id/comments/:commentId → Update comment (ownership)
  * DELETE /posts/:id/comments/:commentId → Delete comment (owner only)
 
 # Example Request
