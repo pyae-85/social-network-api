@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+    id          Int       @id @default(autoincrement())
+    name        String
+    username    String    @unique
+    bio         String?
+    password    String
+    posts       Post[]
+    comments    Comment[]
+    postLikes   PostLike[]
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+
+    @@map("user")
+}
+
+model Post {
+    id          Int       @id @default(autoincrement())
+    body        String
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    userId      Int
+    comments    Comment[]
+    postLikes   PostLike[]
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+
+    @@index([userId])
+    @@map("post")
+}
+
+model Comment {
+    id        Int      @id @default(autoincrement())
+    content   String
+    post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    postId    Int
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    userId    Int
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([postId])
+    @@index([userId])
+    @@map("comment")
+}
+
+model PostLike {
+  id         Int      @id @default(autoincrement())
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  postId     Int
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId     Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([postId, userId])
+  @@index([postId])
+  @@index([userId])
+  @@map("post_like")
+}
