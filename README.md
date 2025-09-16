@@ -16,7 +16,7 @@ This project showcases REST API design, authentication, and database integration
 
  * Node.js + Express.js
  * Prisma ORM
- * SQLite
+ * postgreSQL
  * JWT for authentication
  * bcrypt for password hashing
 
@@ -27,7 +27,8 @@ This project showcases REST API design, authentication, and database integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd social-network-api
 
 2️⃣ Install dependencies<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npx prisma migrate dev --name init
 
 3️⃣ Set up environment variables<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a .env file in the root with:<br>
@@ -35,18 +36,19 @@ This project showcases REST API design, authentication, and database integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JWT_SECRET="your_jwt_secret"
 
 4️⃣ Run the app<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm run dev<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npx nodemon index.js<br>
 
 ## API Endpoints
 
 ### Auth
  * POST /users/register → Register new user<br>
  * POST /users/login → Login & get token<br>
- * POST /users/verity → verify token
+ * POST /users/verity → Verify token
 
 ### Users
+ * GET /users → List users<br>
  * GET /users/:id → Get user profile<br>
- * PUT /users/:id → Update profile (owner only)<br>
+ * PUT /users/edit/:id → Update profile (owner only)<br>
  * DELETE /users/:id → Delete profile (owner only)
 
 ### Posts
@@ -60,7 +62,7 @@ This project showcases REST API design, authentication, and database integration
 
 ### Comments
  * POST /posts/:id/comments → Add comment<br>
- * PUT /posts/:postId/comments/:commentId → Update comment (ownership)
+ * PUT /posts/:id/comments/:commentId → Update comment (ownership)
  * DELETE /posts/:id/comments/:commentId → Delete comment (owner only)
 
 # Example Request
